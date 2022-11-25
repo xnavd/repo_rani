@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./src/img/favicon.png" />
+    <title>Rani</title>
+    <meta name="description" content="Free open source Tailwind CSS Store template" />
+    <meta name="keywords"
+        content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic" />
+
+    <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="./src/font/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet" />
+
+    <style>
+        .work-sans {
+            font-family: "Work Sans", sans-serif;
+        }
+
+        #menu-toggle:checked+#menu {
+            display: block;
+        }
+
+        .hover\:grow {
+            transition: all 0.3s;
+            transform: scale(1);
+        }
+
+        .hover\:grow:hover {
+            transform: scale(1.02);
+        }
+
+        .carousel-open:checked+.carousel-item {
+            position: static;
+            opacity: 100;
+        }
+
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+
+        #carousel-1:checked~.control-1,
+        #carousel-2:checked~.control-2,
+        #carousel-3:checked~.control-3 {
+            display: block;
+        }
+
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+
+        #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #000;
+            /*Set to match the Tailwind colour you want the active one to be */
+        }
+    </style>
+</head>
+
+<body class="py-24">
+    <div class=" container mx-auto ">
+        <div class="my-3">
+            <p class="uppercase text-2xl font-bold">
+                thông tin thanh toán
+            </p>
+        </div>
+        <div class="flex">
+            <div class="">
+                <!-- foreach -->
+                <div class="flex space-x-6 p-4 border-b-2 ">
+                    <div>
+                        <div class="border p-2 rounded">
+                            <img src="https://picsum.photos/200" alt="" class="w-24 h-24">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full">
+                        <div>
+                            <p class="">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <div class="text-xs text-gray-500">
+                                <p class="my-1">
+                                    <span>Size: </span> <span>M</span>
+                                    <!--  -->
+                                    <span>
+                                        &nbsp
+                                    </span>
+                                    <!--  -->
+                                    <span>Màu: </span> <span>đỏ</span>
+                                </p>
+                                <p class="my-1">
+                                    Số lượng: <span> 1,2,3</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600 mr-4">
+                            123456789 vnđ
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+
+            <!--  -->
+            <div class="border-2 mx-4">
+            </div>
+            <!-- 
+
+             -->
+            <div class="text-center">
+                <p class="text-xl font-semibold">Thông tin khách hàng</p>
+                <div class="px-8">
+                    <input type="text" id="name_user"
+                        class="my-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <input type="text" id="address_user"
+                        class="my-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <input type="text" id="phone_user"
+                        class="my-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <input type="text" id="email_user"
+                        class="my-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <div class="border p-2 my-3">
+                        <p>
+                            Phương thức thanh toán:
+                            <select name="" id="">
+                                <option value="">Nhận hàng thanh toán</option>
+                                <option value="">Thẻ ngân hàng</option>
+                                <option value="">Mã QR</option>
+                                <option value="">a</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4">
+                        Thanh toán
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
